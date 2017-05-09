@@ -2,8 +2,11 @@ package main
 
 import (
 	"net/http"
+	"os"
 	"strings"
 )
+
+const defaultPort = "8080"
 
 var alphabets = map[string]string{
 	"uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -46,6 +49,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = defaultPort
+	}
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":" + port, nil)
 }

@@ -1,0 +1,8 @@
+{
+  "name": "Micro Caps",
+  "description": "Micro Caps",
+  "image": "heroku/go:1.6",
+  "mount_dir": "src/github.com/berfarah/micro-caps",
+  "website": "http://github.com/berfarah/micro-caps",
+  "repository": "http://github.com/berfarah/micro-caps"
+}
